@@ -1,3 +1,7 @@
+body {
+    margin: 0;
+}
+
 .topbar {
     background-color: #333;
     overflow: hidden;
@@ -42,3 +46,72 @@
     text-transform: uppercase;
 }
 
+.infotab {
+    margin-left: 10px;
+    background-color: #333;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.infotab h1 {
+    color: #f2f2f2;
+    padding-right: 20px;
+    font-family: 'Courier New';
+}
+
+.infotab a {
+    padding: 2px;
+    color: #f2f2f2;
+    font-family: 'Courier New';
+}
+
+.infotab a {
+    text-decoration: none;
+}
+
+.infotab a:hover {
+    font-weight: bolder;
+}
+
+.ikona {
+    width: auto;
+    height: 19px;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+.linkoneline {
+    display: flex;
+}
+
+.collapsible {
+    font-size: 19px;
+    background-color: #333;
+    font-weight: bolder;
+    color: #f2f2f2;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-family: 'Courier New';
+    transition: ease, 0.3s;
+}
+
+.collapsible:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.collapsible.active {
+    background-color: #c60505;
+    color: white;
+}
+
+.content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+    
