@@ -75,6 +75,7 @@ body {
 }
 
 .solidtab {
+    display: inline-block;
     border-style: double;
     border-color: #333;
     border-width: 5px;
@@ -94,6 +95,7 @@ body {
 .solidtab li {
     color: #333;
     font-family: 'Courier New';
+    padding-right: 30px;
 }
 
 .ikona {
