@@ -2,14 +2,14 @@ body {
     background-color: black;
     padding: 0;
     margin: 0;
-}
-
-.coderain {
-    display: block;
+    overflow: hidden;
 }
 
 .redirect {
     color: #0f0;
     display: none;
     justify-content: center;
+    align-items: center;
+    overflow:hidden;
+    text-decoration: none; 
 }

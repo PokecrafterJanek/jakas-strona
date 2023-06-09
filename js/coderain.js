@@ -14,13 +14,17 @@ for (var i = 0; i < columns; i++) {
 	drops[i] = 1;
 }
 
-function printRedirect() { //Ten syf się nie wywoluje z jakiejs przyczyny
+var end = false;
 
-	document.getElementById("canvas").style.display = "none";
+function printRedirect() {
+
+	canvas.style.display = "none";
+	document.getElementById("text").style.display = "flex";
 
 }
 
-setTimeout(printRedirect, 1000); //I to jest wina tego gowna
+setTimeout(() => end = true, 10000);
+setTimeout(printRedirect, 15000);
 
 function draw() {
 
@@ -33,7 +37,7 @@ function draw() {
 		context.fillText(text, i * fontSize, drops[i] * fontSize);
 		drops[i]++;
 
-		if (drops[i] * fontSize > canvas.height && Math.random() > .95) {
+		if (drops[i] * fontSize > canvas.height && Math.random() > .95 && end != true) {
 			drops[i] = 0;
 		}
 		
