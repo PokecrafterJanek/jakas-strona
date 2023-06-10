@@ -37,7 +37,7 @@ function draw() {
 		context.fillText(text, i * fontSize, drops[i] * fontSize);
 		drops[i]++;
 
-		if (drops[i] * fontSize > canvas.height && Math.random() > .95 && end != true) {
+		if (drops[i] * fontSize > canvas.height && Math.random() > .97 && end != true) {
 			drops[i] = 0;
 		}
 		
