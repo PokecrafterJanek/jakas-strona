@@ -173,4 +173,19 @@ body {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
-}    
+}
+
+.ossop {
+    border: #333 solid 4px;
+    width: 60%;
+    margin: 0 auto;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.ossop h1 {
+    text-align: center;
+    font-family: 'Courier New';
+    text-transform: uppercase;
+}
