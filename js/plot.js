@@ -3,6 +3,72 @@
 var data = [];
 var names = [];
 
+var margin = { top: 40, right: 60, bottom: 40, left: 60 };
+var width = (window.innerWidth * 0.6) - margin.left - margin.right;
+var height = (window.innerWidth * 0.4) - margin.top - margin.bottom;
+        
+var svg = d3
+    .select("#graph")
+    .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+        
+
+var defs = svg.append("defs");
+
+// Gradient
+
+var gradient = defs.append("radialGradient")
+    .attr("id", "svgGradient")
+    .attr("cx", "0%")
+    .attr("cy", "100%")
+    .attr("r", "70%");
+
+gradient.append("stop")
+.attr('class', 'start')
+.attr("offset", "60%")
+.attr("stop-color", "blue");
+
+gradient.append("stop")
+    .attr('class', 'end')
+    .attr("offset", "100%")
+    .attr("stop-color", "red");
+
+// Skala
+
+var xScale = d3.scaleLinear().range([0, width]).domain([0, 1]);
+var yScale = d3.scaleLinear().range([height, 0]).domain([0, 1]); 
+
+// Trojkat
+
+var trianglePoints = [[xScale(0), yScale(0)], [xScale(1), yScale(0)],[xScale(0.5), yScale(1)]];
+
+console.log(trianglePoints);
+
+svg.append('polygon')
+    .attr('id', 'trojkat')
+    .attr('points', trianglePoints)
+    .style('fill', "url(#svgGradient)");
+    
+// Podpisy
+
+svg.append("text")
+    .attr("x", xScale(-0.02))
+    .attr("y", yScale(0) + 15)
+    .text("Baza");
+        
+svg.append("text")
+    .attr("x", xScale(1))
+    .attr("y", yScale(0) + 15)
+    .text("Nuda");
+        
+svg.append("text")
+    .attr("x", xScale(0.495))
+    .attr("y", yScale(1) - 10)
+    .text("SS");
+
 fetch('data/opinions.json')
     .then(response =>  response.json())
     .then(input => {
@@ -21,66 +87,6 @@ fetch('data/opinions.json')
 
             names.push(name);
         });
-
-        var margin = { top: 40, right: 60, bottom: 40, left: 60 };
-        var width = (window.innerWidth * 0.6) - margin.left - margin.right;
-        var height = (window.innerWidth * 0.4) - margin.top - margin.bottom;
-        
-        var svg = d3
-            .select("#graph")
-            .append("svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
-            .append("g")
-            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-        
-        // Skala
-
-        var xScale = d3.scaleLinear().range([0, width]).domain([0, 1]);
-        var yScale = d3.scaleLinear().range([height, 0]).domain([0, 1]);
-        
-        // Kreski
-
-        svg.append("line")
-            .attr("x1", xScale(0))
-            .attr("y1", yScale(0))
-            .attr("x2", xScale(1))
-            .attr("y2", yScale(0))
-            .attr("stroke", "black")
-            .attr("stroke-width", 2);
-        
-        svg.append("line")
-            .attr("x1", xScale(1))
-            .attr("y1", yScale(0))
-            .attr("x2", xScale(0.5))
-            .attr("y2", yScale(1))
-            .attr("stroke", "black")
-            .attr("stroke-width", 2);
-        
-        svg.append("line")
-            .attr("x1", xScale(0.5))
-            .attr("y1", yScale(1))
-            .attr("x2", xScale(0))
-            .attr("y2", yScale(0))
-            .attr("stroke", "black")
-            .attr("stroke-width", 2);
-        
-        // Podpisy
-
-        svg.append("text")
-            .attr("x", xScale(-0.02))
-            .attr("y", yScale(0) + 15)
-            .text("Baza");
-        
-        svg.append("text")
-            .attr("x", xScale(1))
-            .attr("y", yScale(0) + 15)
-            .text("Nuda");
-        
-        svg.append("text")
-            .attr("x", xScale(0.495))
-            .attr("y", yScale(1) - 10)
-            .text("SS");
         
         // Wypisz Dane
 
@@ -105,10 +111,10 @@ fetch('data/opinions.json')
             .append("text")
             .attr("class", "data-label")
             .attr("x", function (d) {
-                return xScale(d.axisB + (d.axisA / 2));
+                return xScale(d.axisB + (d.axisA / 2) + 0.01);
             })
             .attr("y", function (d) {
-                return yScale(d.axisA) - 10;
+                return yScale(d.axisA) + 5;
             })
             .text(function (d, i) {
                 return names[i];

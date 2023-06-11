@@ -1,16 +1,23 @@
 {
     "1": {
-        "Name": "Agata Markowska",
+        "Name": "ex1",
         "Baza": 0,
         "Nuda": 0,
         "SS": 1
     },
 
     "2": {
-        "Name": "Tomasz Winter",
+        "Name": "ex2",
         "Baza": 0.8,
         "Nuda": 0,
         "SS": 0.1
+    },
+
+    "3": {
+        "Name": "ex3",
+        "Baza": 0.2,
+        "Nuda": 1,
+        "SS": 0
     }
 
 }
