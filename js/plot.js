@@ -27,9 +27,9 @@ var gradient = defs.append("radialGradient")
     .attr("r", "70%");
 
 gradient.append("stop")
-.attr('class', 'start')
-.attr("offset", "60%")
-.attr("stop-color", "blue");
+    .attr('class', 'start')
+    .attr("offset", "60%")
+    .attr("stop-color", "blue");
 
 gradient.append("stop")
     .attr('class', 'end')
@@ -44,8 +44,6 @@ var yScale = d3.scaleLinear().range([height, 0]).domain([0, 1]);
 // Trojkat
 
 var trianglePoints = [[xScale(0), yScale(0)], [xScale(1), yScale(0)],[xScale(0.5), yScale(1)]];
-
-console.log(trianglePoints);
 
 svg.append('polygon')
     .attr('id', 'trojkat')
@@ -73,7 +71,7 @@ fetch('data/opinions.json')
     .then(response =>  response.json())
     .then(input => {
 
-        Object.values(input).forEach(element => {
+        input.forEach(element => {
             const name = element.Name;
             var baza = element.Baza;
             var nuda = element.Nuda;

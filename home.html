@@ -27,10 +27,42 @@
             <h1 onclick="goToBottom();">Ogólnostaszicowy System Oceny Pedagogów</h1>
 
             <div id="graph"></div>
+
+            <div class="ocenianie">
+                <select id="selector">
+                    <option value="0" selected disabled>Wybierz Podmiot:</option>
+                </select>
+
+                <div class="poziom">
+                    <p>Baza: </p>
+                    <p id="pBazy">0%</p>
+                </div>
+                <div class="poziom">
+                    <p>SS: </p>
+                    <p id="pSS">0%</p>
+                </div>
+                <div class="poziom">
+                    <p>Nuda: </p>
+                    <p id="pNudy">0%</p>
+                </div>
+
+            </div>
+
+            <div class="wysylanie">
+
+                <form>
+                    <input type="number" placeholder="Baza" id="iBazy" required min="0" max="100">
+                    <input type="number" placeholder="SS" id="iSS" required min="0" max="100">
+                    <input type="number" placeholder="Nuda" id="iNudy" required min="0" max="100">
+                    <input type="submit" value="Wyślij" class="submitter">
+                </form>
+                
+            </div>    
             
         </div>
 
         <script src="js/plot.js"></script>
+        <script src="js/menu.js"></script>
 
     </body>
 

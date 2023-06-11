@@ -1,23 +1,25 @@
-{
-    "1": {
+[
+    {
         "Name": "ex1",
         "Baza": 0,
         "Nuda": 0,
-        "SS": 1
+        "SS": 1,
+        "Opinie": 0
     },
 
-    "2": {
+    {
         "Name": "ex2",
         "Baza": 0.8,
-        "Nuda": 0,
-        "SS": 0.1
+        "Nuda": 0.4,
+        "SS": 0.1,
+        "Opinie": 0
     },
 
-    "3": {
+    {
         "Name": "ex3",
-        "Baza": 0.2,
+        "Baza": 0.4,
         "Nuda": 1,
-        "SS": 0
+        "SS": 0.2,
+        "Opinie": 0
     }
-
-}
+]
