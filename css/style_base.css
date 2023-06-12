@@ -46,6 +46,16 @@ body {
     text-transform: uppercase;
 }
 
+.topbar p {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 18px;
+    text-decoration: none;
+    font-size: 19px;
+    font-family: 'Courier New';
+}
+
 .infotab {
     margin: auto;
 

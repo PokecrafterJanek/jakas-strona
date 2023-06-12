@@ -58,7 +58,7 @@ target.addEventListener('change', function() {
 function handleSubmit(event) {
     event.preventDefault();
 
-    const selectedValue = target.value - 1;
+    const selectedValue = target.value;
     const ilOpini = people[selectedValue].opinie;
 
     people[selectedValue].baza = ((people[selectedValue].baza * ilOpini) + inputBazy) / (ilOpini + 1);
