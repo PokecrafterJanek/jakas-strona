@@ -50,11 +50,11 @@
 
             <div class="wysylanie">
 
-                <form>
-                    <input type="number" placeholder="Baza" id="iBazy" required min="0" max="100">
-                    <input type="number" placeholder="SS" id="iSS" required min="0" max="100">
-                    <input type="number" placeholder="Nuda" id="iNudy" required min="0" max="100">
-                    <input type="submit" value="Wyślij" class="submitter">
+                <form onsubmit="handleSubmit(event)">
+                    <input type="number" placeholder="Baza" id="inputBazy" required min="0" max="100">
+                    <input type="number" placeholder="SS" id="inputSS" required min="0" max="100">
+                    <input type="number" placeholder="Nuda" id="inputNudy" required min="0" max="100">
+                    <input type="submit" value="Wyślij" id="submitter">
                 </form>
                 
             </div>    
